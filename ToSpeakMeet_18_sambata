@@ -1,0 +1,48 @@
+
+
+partea de intrebari:
+
+Prima intrebare este esentiala:
+
+o baza de date cu prima intrebare
+
+in functie de raspuns la prima intrebare, ne ducem la alte 2 baze de date
+
+un functie de acele raspunsuri mergem tot asa
+
+deci avem asa exemplu:
+
+baza_1:
+
+    intrebare_1: "Esti vegetarian sau nu"
+
+daca DA -> Mergem la baza_2
+daca NU -> Mergem la baza_3
+
+baza_2 si baza_3
+
+baza_2
+    intrebare_1: "iti place salata"
+    intrebare_2: "iti plac rosile" 
+    etc
+    etc
+
+baza_2
+    intrebare_1: "doresti sa ai si salata?"
+    intrebare_2: "doresti o mancare cu mai multe proteine?"
+    etc
+    etc
+
+in functie de raspunsurile astea, alegem o alta baza de date pentru fiecare raspuns
+
+si in final, ce se scrie in "bazaRaspunsuriIntrebari.js" se ia raspunsurile si se verifica in baza de date cu retete
+
+in baza de date de retete o sa avem gen,
+
+{
+    "q1":
+    "q2":
+    "q3":
+    ....
+    "Retete":
+}
