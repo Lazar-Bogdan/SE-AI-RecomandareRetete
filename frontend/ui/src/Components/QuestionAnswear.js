@@ -4,7 +4,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 //import FormControl from '@mui/material/FormControl';
 import {useState} from "react";
 
-import questions from "./../backend/bazaIntrebari"
+import {questions} from "./../backend/bazaIntrebari"
 
 const QuestionAnswear = () => {
 
