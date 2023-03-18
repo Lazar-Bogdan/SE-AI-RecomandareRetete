@@ -46,3 +46,12 @@ in baza de date de retete o sa avem gen,
     ....
     "Retete":
 }
+
+
+18.03.2023
+
+mai bine de avut formatul aceasta pe pagina urmatoare: 
+http://localhost:3002/numberOfLvel/NumberOfNode/
+
+unde numberOfLevel se refera la numarul de nivel al arborelui
+numberOfNode - se refera la numarul de node

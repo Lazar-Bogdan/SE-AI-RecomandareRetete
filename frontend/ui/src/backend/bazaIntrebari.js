@@ -1,70 +1,14 @@
-export const questions = [
+export const level1 = [
     {
-        question: "Are you vegan?"
+        node0: "Are you vegan"
     }
 ]
 
-export const questionsOneYes = [
+export const level2 = [
     {
-        question: "WHY IS THIS GREEN"
+        node1: "Intrebare daca da",
+        node2: "Intrebare nu"
     }
 ]
 
-export const questionsOneNo = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export const questionsTwoYes = [
-    {
-        question: "WHY IS THIS GREEN"
-    },
-    {
-        question: "WHY IS THIS PURPULE"
-    }
-]
-
-export const questionsTwoNo = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export const questionsThreeYes = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export const questionsThreeNo = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export const questionsFourYes = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export const questionsFourNo = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export const questionsFiveYes = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export const questionsFiveNo = [
-    {
-        question: "WHY IS THIS GREEN"
-    }
-]
-
-export default {questions, questionsFiveNo, questionsFiveYes, questionsFourNo, questionsFourYes, questionsOneNo, questionsOneYes, questionsThreeNo, questionsThreeYes, questionsTwoNo, questionsTwoYes};
+export default {level1, level2};

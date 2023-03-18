@@ -4,7 +4,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 //import FormControl from '@mui/material/FormControl';
 import {useState} from "react";
 
-import {questions} from "./../backend/bazaIntrebari"
+import {level1} from "./../backend/bazaIntrebari"
 
 const QuestionAnswear = () => {
 
@@ -14,11 +14,14 @@ const QuestionAnswear = () => {
         setValue(event.target.value);
     };
 
+    // avem buton de next
+    // ne duce la pagina urmatoare cu link-ul /lvlNr/NodeNR
+
     function readFromDataBase() {
-        return questions.map((item, index) => (
+        return level1.map((item, index) => (
             <div>
                 <div style={{ width: '3rem', height: '30rem', color: 'black'}}>
-                    Intrebare {index + 1} : {item.question}
+                    Intrebare {index + 1} : {item.node0}
                 </div>
                 <RadioGroup
                     value={value}
