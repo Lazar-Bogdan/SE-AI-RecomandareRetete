@@ -1,7 +1,6 @@
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-//import FormControl from '@mui/material/FormControl';
 import {useState} from "react";
 
 import {level1} from "./../backend/bazaIntrebari"
@@ -20,16 +19,16 @@ const QuestionAnswear = () => {
     function readFromDataBase() {
         return level1.map((item, index) => (
             <div>
-                <div style={{ width: '3rem', height: '30rem', color: 'black'}}>
-                    Intrebare {index + 1} : {item.node0}
+                <div style={{ color: 'black'}}>
+                   <b>Question {index + 1}.</b> {item.node0}?
                 </div>
                 <RadioGroup
                     value={value}
                     onChange={handleChange}
                     style={{display: 'flex', flexDirection: 'row'}}
                 >
-                    <FormControlLabel value="da" control={<Radio/>} label="da"/>
-                    <FormControlLabel value="nu" control={<Radio/>} label="nu"/>
+                    <FormControlLabel value="yes" control={<Radio/>} label="yes"/>
+                    <FormControlLabel value="no" control={<Radio/>} label="no"/>
                 </RadioGroup>
             </div>
         ));
@@ -44,8 +43,9 @@ const QuestionAnswear = () => {
                 backgroundColor: '#FFFFFF',
                 borderRadius: '1rem',
                 padding: '0.5rem',
-                top: '2rem',
+                top: '4rem',
                 left: '43vw',
+                border: '1px solid #08484A',
             }}
         >
             {readFromDataBase()}
