@@ -1,22 +1,14 @@
-import backgroundImg from './food2.png';
+import backgroundImg from "./food2.png";
 import QuestionAnswear from "../Components/QuestionAnswear";
 import {Button} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
-import {addToAnswer} from '../backend/addOnJson';
-import answers from './../backend/bazaRaspunsIntrebari';
-import {useNavigate} from 'react-router-dom';
+const QuestionsPage = () => {
 
-const MainPage = () => {
+    const navigate = useNavigate();
 
-   const navigate = useNavigate();
-
-    addToAnswer(answers, 1, 4);
-    addToAnswer(answers, 2, 3);
-    console.log("ANSWERS");
-    console.log(answers);
-
-    const goToNextPage = () => {
-        navigate("/questions");
+    const goToRecipePage = () => {
+        navigate("/recipe");
     };
 
     return (
@@ -33,12 +25,12 @@ const MainPage = () => {
                         color: '#08484A',
                         borderColor: '#08484A',
                     }}
-                    onClick={goToNextPage}
+                    onClick={goToRecipePage}
             >
-                Next Question
+                Get recipe
             </Button>
         </>
     );
 };
 
-export default MainPage;
+export default QuestionsPage;
