@@ -6,7 +6,7 @@ import {Button} from "@mui/material";
 
 import {addToAnswer} from '../backend/addOnJson';
 import answers from './../backend/bazaRaspunsIntrebari';
-import {useNavigate} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -16,7 +16,7 @@ import {level1} from "./../backend/bazaIntrebari"
 
 const MainPage = () => {
 
-    const navigate = useNavigate();
+    const navigate = useHistory();
 
     const [value, setValue] = useState('nu');
 
@@ -46,7 +46,15 @@ const MainPage = () => {
     }
 
     const goToNextPage = () => {
-        addToAnswer(answers, 0, value);
+        if(value === "yes")
+        {
+            addToAnswer(answers, 0, value, "Vegani");
+            addToAnswer(answers, 1, "no", "Vegani");
+            addToAnswer(answers, 2, "no", "Vegani");
+            addToAnswer(answers, 3, "no", "Vegani");
+        }else{
+            addToAnswer(answers, 0, value, "NoVegani");
+        }
         // console.log("test")
         // console.log(answers);
         // console.log("value");
@@ -54,9 +62,10 @@ const MainPage = () => {
 
         if(value == "yes")
         {
-            navigate("/questions/vegani");
+            navigate.push("/questions/vegani/1");
+            window.location.reload();
         }else{
-            navigate("/questions/Novegani");
+            navigate.push("/questions/Novegani/1");
         }
 
         //navigate("/questions");

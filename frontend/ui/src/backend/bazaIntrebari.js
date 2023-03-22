@@ -7,86 +7,34 @@ export const level1 = [
 export const IntrebariVegani = [
     {
         id:1,
-        node0: "Intrebare daca da suntem vegani",
+        node0: "Something liquid?",
     },
     {
         id:2,
-        node0: "Intrebare daca da",
+        node0: "Tofu",
     },
     {
         id:3,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:4,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:5,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:6,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:7,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:8,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:9,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:10,
-        node0: "Intrebare daca da",
+        node0: "mushrooms?",
     }
 ]
 
 export const IntrebariNoVegani = [
     {
         id:1,
-        node0: "Intrebare daca da nu suntem vegani",
+        node0: "Vegetables?",
     },
     {
         id:2,
-        node0: "Intrebare daca da nu suntem vegani",
+        node0: "potatos?",
     },
     {
         id:3,
-        node0: "Intrebare daca da nu suntem vegani",
+        node0: "Rice?",
     },
     {
         id:4,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:5,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:6,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:7,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:8,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:9,
-        node0: "Intrebare daca da",
-    },
-    {
-        id:10,
-        node0: "Intrebare daca da",
+        node0: "peas?",
     }
 ]
 

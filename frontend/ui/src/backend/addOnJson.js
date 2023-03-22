@@ -1,11 +1,18 @@
+import CookieService from "./CookieService";
 
-function addToAnswer(json, n, value) {
-  if (!json.hasOwnProperty("answer_"+n)) {  // if key doesn't exist
-    json["answer_"+n] = value;  // create key with new array containing value
-  } else {
-    json["answer_"+n].push(value);  // add value to existing array associated with key
-  }
-  return json;
+function getCookie(n, type)
+{
+  return CookieService.get('answer_' + type + '_' + n)
+}
+
+function addToAnswer(json, n, value,type) {
+  console.log("add to answer function");
+  console.log(n);
+  console.log(value);
+  console.log(type);
+  const options = {path :"/"};
+  CookieService.set('answer_' + type + '_' + n, value,options);
+  //window.sessionStorage.setItem('answer_' + type + '_' + n, value);
 }
 
 function addToRetete(json, n, Nume,Ingrediente,Prepare, IMG) {
@@ -25,13 +32,15 @@ function addToRetete(json, n, Nume,Ingrediente,Prepare, IMG) {
   };
 
   if (Array.isArray(json)) {
+    console.log("if add to retete");
     json.push(recipe);
   } else {
+    console.log('else add to retete');
     json = [recipe];
   }
 
-  console.log(json);
+  //console.log(json);
   return json;
 }
 
-export {addToAnswer, addToRetete}
+export {addToAnswer, addToRetete, getCookie}
