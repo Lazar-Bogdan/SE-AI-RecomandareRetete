@@ -34,7 +34,7 @@ const QuestionsPage = () => {
         console.log(value);
         if(type === "Vegani")
         {
-            if(currentNode === 1 && value === "yes")
+            if(currentNode == 1 && value === "yes")
             {
                 addToAnswer(answers, currentNode, value, type);
                 addToAnswer(answers, 3, "no", type);
@@ -42,7 +42,7 @@ const QuestionsPage = () => {
                 history.push("/algoritm/" + type);
                 window.location.reload();
             }else{
-                if(currentNode === 1 && value === "no")
+                if(currentNode == 1 && value === "no")
                 {
                     console.log("in else");
                     addToAnswer(answers, currentNode, value,type);
@@ -52,7 +52,7 @@ const QuestionsPage = () => {
                     window.location.reload();
                 }
 
-                if(currentNode === 2 )
+                if(currentNode == 2 )
                 {
                     if(value === "yes")
                     {
@@ -67,7 +67,7 @@ const QuestionsPage = () => {
                     }
                 }
 
-                if(currentNode === 3)
+                if(currentNode == 3)
                 {
                     addToAnswer(answers, currentNode, value, type);
                     history.push("/algoritm/" + type);
@@ -75,14 +75,14 @@ const QuestionsPage = () => {
                 }
             }
         }else{
-            if(currentNode === 1 && value === "yes")
+            if(currentNode == 1 && value === "yes")
             {
                 addToAnswer(answers, currentNode, value, type);
                 addToAnswer(answers, 3, "no", type);
                 history.push("/questions/NoVegani/" + 2)
                 window.location.reload();
             }else{
-                if(currentNode === 1 && value === "no")
+                if(currentNode == 1 && value === "no")
                 {
                     addToAnswer(answers, currentNode, value, type);
                     addToAnswer(answers, 2, "no", type);
@@ -91,40 +91,40 @@ const QuestionsPage = () => {
                     window.location.reload();
                 }
 
-                if(currentNode === 2 && value === "yes")
+                if(currentNode == 2 && value === "yes")
                 {
                     addToAnswer(answers, currentNode, value, type);
                     addToAnswer(answers, 4, "no", type);
                     history.push("/algoritm/" + type)
                     window.location.reload();
                 }else{
-                    if(currentNode === 2 && value === "no")
+                    if(currentNode == 2 && value === "no")
                     {
                         //console.log("aici unde trebuie");
                         addToAnswer(answers, currentNode, value, type);
                         history.push("/questions/NoVegani/" + 4)
                         window.location.reload();
                     }else{
-                        if(currentNode === 3 && value === "yes")
+                        if(currentNode == 3 && value === "yes")
                         {
                             addToAnswer(answers, currentNode, value, type);
                             history.push("/algoritm/" + type)
                             window.location.reload();
                         }else{
-                            if(currentNode === 3 && value === "no")
+                            if(currentNode == 3 && value === "no")
                             {
                                 addToAnswer(answers, currentNode, value, type);
                                 history.push("/algoritm/" + type)
                                 window.location.reload();
                             }
 
-                            if(currentNode === 4 && value === "yes")
+                            if(currentNode == 4 && value == "yes")
                             {
                                 addToAnswer(answers, currentNode, value, type);
                                 history.push("/algoritm/" + type)
                                 window.location.reload();
                             }else{
-                                if(currentNode === 4 && value === "no")
+                                if(currentNode == 4 && value === "no")
                                 {
                                     console.log("aici se duce");
                                     addToAnswer(answers, currentNode, value, type);
@@ -138,10 +138,7 @@ const QuestionsPage = () => {
                 }
             }
         }
-
     };
-
-
 
     function getQuestions()
     {
@@ -170,7 +167,7 @@ const QuestionsPage = () => {
         console.log("readFromDataBase");
         console.log(currentNode);
         return questions.map((item, index) => (
-          item.id === currentNode ? (
+          item.id == currentNode ? (
             <div key={item.id}>
               <div style={{ color: 'black'}}>
                 <b>Question {index + 1}.</b> {item.node0}

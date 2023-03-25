@@ -32,7 +32,6 @@ const RecipePage = () => {
         setIdRet(CookieService.get('output_' + type));
     }, [type, idReteta])
 
-
     function MapRecipe() {
         console.log("maprecipe");
         console.log(idReteta);
@@ -40,7 +39,7 @@ const RecipePage = () => {
         if (type === "Vegani") {
             return reteteVegani.map((item, index) => (
                 <div key={index}>
-                    {idReteta === item.id && (
+                    {idReteta == item.id && (
                         <div
                             style={{
                                 display: 'flex',
@@ -55,11 +54,11 @@ const RecipePage = () => {
                             }}
                         >
                             <img src={item.Imagine} alt="img"/>
-                            <p>Nume:</p>
+                            <div>RECIPE NAME</div>
                             <p>{item.NumeReteta}</p>
-                            <p>Ingrediente:</p>
+                            <div>INGREDIENTS</div>
                             <p>{item.Descriere}</p>
-                            <p>Prepare:</p>
+                            <div>HOW TO</div>
                             <p>{item.ModPreparare}</p>
                         </div>
                     )}
@@ -67,8 +66,9 @@ const RecipePage = () => {
             ));
         } else {
             return retete.map((item, index) => (
-                <div key={index}>
-                    {idReteta === item.id && (
+                <div
+                    key={index}>
+                    {idReteta == item.id && (
                         <div
                             style={{
                                 display: 'flex',
@@ -83,11 +83,11 @@ const RecipePage = () => {
                             }}
                         >
                             <img src={item.Imagine} alt="img"/>
-                            <p>Nume:</p>
+                            <div>RECIPE NAME</div>
                             <p>{item.NumeReteta}</p>
-                            <p>Ingrediente:</p>
+                            <div>INGREDIENTS</div>
                             <p>{item.Descriere}</p>
-                            <p>Prepare:</p>
+                            <div>HOW TO</div>
                             <p>{item.ModPreparare}</p>
                         </div>
                     )}
