@@ -1,40 +1,40 @@
 export const level1 = [
     {
-        node0: "Are you vegan"
+        node0: "Are you vegan?"
     }
 ]
 
 export const IntrebariVegani = [
     {
         id:1,
-        node0: "Something liquid?",
+        node0: "Would you like a soup recipe?",
     },
     {
         id:2,
-        node0: "Tofu",
+        node0: "Would you like some tofu?",
     },
     {
         id:3,
-        node0: "mushrooms?",
+        node0: "Would you like some mushrooms?",
     }
 ]
 
 export const IntrebariNoVegani = [
     {
         id:1,
-        node0: "Vegetables?",
+        node0: "Would you like some vegetables?",
     },
     {
         id:2,
-        node0: "potatos?",
+        node0: "Would you like some potatoes?",
     },
     {
         id:3,
-        node0: "Rice?",
+        node0: "Would you like some rice?",
     },
     {
         id:4,
-        node0: "peas?",
+        node0: "Would you like some peas?",
     }
 ]
 

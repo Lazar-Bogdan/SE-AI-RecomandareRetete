@@ -1,18 +1,14 @@
 import backgroundImg from "./food2.png";
-import QuestionAnswear from "../Components/QuestionAnswear";
 import {Button} from "@mui/material";
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import {useState, useEffect} from "react";
-import {addToAnswer, addToRetete} from '../backend/addOnJson';
+import {addToAnswer} from '../backend/addOnJson';
 import answers from './../backend/bazaRaspunsIntrebari';
-import {retete, reteteVegani} from './../backend/bazaRetete';
-import reteteMatched from "../backend/bazaReteteMatched";
 import { useHistory } from "react-router-dom";
-import CookieService from "../backend/CookieService";
 
-import {IntrebariNoVegani, IntrebariVegani} from "./../backend/bazaIntrebari"
+import {IntrebariNoVegani, IntrebariVegani} from "../backend/bazaIntrebari"
 
 
 const QuestionsPage = () => {
@@ -25,7 +21,7 @@ const QuestionsPage = () => {
 
     console.log(answers);
 
-    function handleChange(id){
+    function handleChange(){
         return function(event) {
             setValue(event.target.value);
         };
@@ -38,7 +34,7 @@ const QuestionsPage = () => {
         console.log(value);
         if(type === "Vegani")
         {
-            if(currentNode == 1 && value === "yes")
+            if(currentNode === 1 && value === "yes")
             {
                 addToAnswer(answers, currentNode, value, type);
                 addToAnswer(answers, 3, "no", type);
@@ -46,7 +42,7 @@ const QuestionsPage = () => {
                 history.push("/algoritm/" + type);
                 window.location.reload();
             }else{
-                if(currentNode == 1 && value === "no")
+                if(currentNode === 1 && value === "no")
                 {
                     console.log("in else");
                     addToAnswer(answers, currentNode, value,type);
@@ -56,7 +52,7 @@ const QuestionsPage = () => {
                     window.location.reload();
                 }
 
-                if(currentNode == 2 )
+                if(currentNode === 2 )
                 {
                     if(value === "yes")
                     {
@@ -71,7 +67,7 @@ const QuestionsPage = () => {
                     }
                 }
 
-                if(currentNode == 3)
+                if(currentNode === 3)
                 {
                     addToAnswer(answers, currentNode, value, type);
                     history.push("/algoritm/" + type);
@@ -79,14 +75,14 @@ const QuestionsPage = () => {
                 }
             }
         }else{
-            if(currentNode == 1 && value === "yes")
+            if(currentNode === 1 && value === "yes")
             {
                 addToAnswer(answers, currentNode, value, type);
                 addToAnswer(answers, 3, "no", type);
                 history.push("/questions/NoVegani/" + 2)
                 window.location.reload();
             }else{
-                if(currentNode == 1 && value === "no")
+                if(currentNode === 1 && value === "no")
                 {
                     addToAnswer(answers, currentNode, value, type);
                     addToAnswer(answers, 2, "no", type);
@@ -95,40 +91,40 @@ const QuestionsPage = () => {
                     window.location.reload();
                 }
 
-                if(currentNode == 2 && value === "yes")
+                if(currentNode === 2 && value === "yes")
                 {
                     addToAnswer(answers, currentNode, value, type);
                     addToAnswer(answers, 4, "no", type);
                     history.push("/algoritm/" + type)
                     window.location.reload();
                 }else{
-                    if(currentNode == 2 && value === "no")
+                    if(currentNode === 2 && value === "no")
                     {
                         //console.log("aici unde trebuie");
                         addToAnswer(answers, currentNode, value, type);
                         history.push("/questions/NoVegani/" + 4)
                         window.location.reload();
                     }else{
-                        if(currentNode == 3 && value === "yes")
+                        if(currentNode === 3 && value === "yes")
                         {
                             addToAnswer(answers, currentNode, value, type);
                             history.push("/algoritm/" + type)
                             window.location.reload();
                         }else{
-                            if(currentNode == 3 && value === "no")
+                            if(currentNode === 3 && value === "no")
                             {
                                 addToAnswer(answers, currentNode, value, type);
                                 history.push("/algoritm/" + type)
                                 window.location.reload();
                             }
 
-                            if(currentNode == 4 && value == "yes")
+                            if(currentNode === 4 && value === "yes")
                             {
                                 addToAnswer(answers, currentNode, value, type);
                                 history.push("/algoritm/" + type)
                                 window.location.reload();
                             }else{
-                                if(currentNode == 4 && value === "no")
+                                if(currentNode === 4 && value === "no")
                                 {
                                     console.log("aici se duce");
                                     addToAnswer(answers, currentNode, value, type);
@@ -142,61 +138,7 @@ const QuestionsPage = () => {
                 }
             }
         }
-        
-        
 
-
-    //     console.log("din functia goToRecipe");
-    //     console.log(type);
-    //     console.log(answers);
-    //     if(type === "NoVegani"){
-    //         console.log("in if");
-    //         for (let i = 0; i < retete.length; i++) {
-    //             console.log("ce se testeaza");
-    //             console.log(retete[i]);
-    //             if (
-    //                 answers.answer_0 === retete[i].q0 &&
-    //                 answers.answer_1 === retete[i].q1 &&
-    //                 answers.answer_2 === retete[i].q2 &&
-    //                 answers.answer_3 === retete[i].q3 &&
-    //                 answers.answer_4 === retete[i].q4 &&
-    //                 answers.answer_5 === retete[i].q5 
-    //                 ) {
-    //                 let x = retete[i].NumeReteta;
-    //                 let y = retete[i].Descriere;
-    //                 let z = retete[i].ModPreparare;
-    //                 let t = retete[i].Imagine;
-    //                 addToRetete(reteteMatched, i, x,y,z,t);
-    //                 console.log(`The values for recipe ${i+1} match!`);
-    //             }
-    //         } 
-    //     }else{
-    //         console.log("in else");
-    //         for (let i = 0; i < reteteVegani.length; i++) {
-    //             console.log("ce se testeaza");
-                
-    //             console.log(reteteVegani[i]);
-    //             if (
-    //                 answers.answer_0 === reteteVegani[i].q0 &&
-    //                 answers.answer_1 === reteteVegani[i].q1 &&
-    //                 answers.answer_2 === reteteVegani[i].q2 &&
-    //                 answers.answer_3 === reteteVegani[i].q3 &&
-    //                 answers.answer_4 === reteteVegani[i].q4 &&
-    //                 answers.answer_5 === reteteVegani[i].q5 
-    //                 ) {
-    //                 let x = reteteVegani[i].NumeReteta;
-    //                 let y = reteteVegani[i].Descriere;
-    //                 let z = reteteVegani[i].ModPreparare;
-    //                 let t = reteteVegani[i].Imagine;
-    //                 addToRetete(reteteMatched, i, x,y,z,t);
-    //                 console.log(`The values for recipe ${i+1} match!`);
-    //             }
-    //         } 
-    //     }
-        
-       
-        
-    //    navigate("/recipe/"+type);
     };
 
 
@@ -228,10 +170,10 @@ const QuestionsPage = () => {
         console.log("readFromDataBase");
         console.log(currentNode);
         return questions.map((item, index) => (
-          item.id == currentNode ? (
+          item.id === currentNode ? (
             <div key={item.id}>
               <div style={{ color: 'black'}}>
-                <b>Question {index + 1}.</b> {item.node0}?
+                <b>Question {index + 1}.</b> {item.node0}
               </div>
               <RadioGroup style={{display: 'flex', flexDirection: 'row'}}>
                 <FormControlLabel onChange={handleChange(item.id)} value="yes" control={<Radio/>} label="yes"/>

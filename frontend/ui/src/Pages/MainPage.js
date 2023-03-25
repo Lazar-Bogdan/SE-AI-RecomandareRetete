@@ -1,7 +1,6 @@
 import {useState} from "react";
 
 import backgroundImg from './food2.png';
-import QuestionAnswear from "../Components/QuestionAnswear";
 import {Button} from "@mui/material";
 
 import {addToAnswer} from '../backend/addOnJson';
@@ -11,7 +10,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
-import {level1} from "./../backend/bazaIntrebari"
+import {level1} from "../backend/bazaIntrebari"
 
 
 const MainPage = () => {
@@ -29,9 +28,9 @@ const MainPage = () => {
 
     function readFromDataBase() {
         return level1.map((item, index) => (
-            <div>
+            <div key={index}>
                 <div style={{ color: 'black'}}>
-                   <b>Question {index + 1}.</b> {item.node0}?
+                   <b>Question {index + 1}.</b> {item.node0}
                 </div>
                 <RadioGroup
                     value={value}
@@ -60,7 +59,7 @@ const MainPage = () => {
         // console.log("value");
         // console.log(value);
 
-        if(value == "yes")
+        if(value === "yes")
         {
             navigate.push("/questions/vegani/1");
             window.location.reload();

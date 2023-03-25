@@ -3,7 +3,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import {useState} from "react";
 
-import {level1} from "./../backend/bazaIntrebari"
+import {level1} from "../backend/bazaIntrebari"
 
 const QuestionAnswear = () => {
 
@@ -18,9 +18,9 @@ const QuestionAnswear = () => {
 
     function readFromDataBase() {
         return level1.map((item, index) => (
-            <div>
+            <div key={index}>
                 <div style={{ color: 'black'}}>
-                   <b>Question {index + 1}.</b> {item.node0}?
+                   <b>Question {index + 1}.</b> {item.node0}
                 </div>
                 <RadioGroup
                     value={value}
