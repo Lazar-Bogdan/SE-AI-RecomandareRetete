@@ -43,9 +43,9 @@ const QuestionAnswear = () => {
                 backgroundColor: '#FFFFFF',
                 borderRadius: '1rem',
                 padding: '0.5rem',
-                top: '4rem',
+                top: '40vh',
                 left: '43vw',
-                border: '1px solid #08484A',
+                border: '2px solid #08484A',
             }}
         >
             {readFromDataBase()}

@@ -43,23 +43,23 @@ const RecipePage = () => {
                         <div
                             style={{
                                 display: 'flex',
-                                flexDirection: 'column',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 backgroundColor: '#FFFFFF',
                                 borderRadius: '1rem',
                                 padding: '0.5rem',
-                                border: '1px solid #08484A',
+                                border: '2px solid #08484A',
                                 margin: '5rem 6rem',
                             }}
                         >
-                            <img src={item.Imagine} alt="img"/>
-                            <div>RECIPE NAME</div>
-                            <p>{item.NumeReteta}</p>
-                            <div>INGREDIENTS</div>
-                            <p>{item.Descriere}</p>
-                            <div>HOW TO</div>
-                            <p>{item.ModPreparare}</p>
+                            <img src={item.Imagine} alt="img" style={{borderRadius: '1rem'}}/>
+                            <div style={{display: 'flex', flexDirection: 'column'}}>
+                                <p style={{ color: '#08484A', fontWeight: 700, fontSize: '1.5rem', display: 'flex', marginLeft: '1.5rem', marginTop: '-3rem' }}>{item.NumeReteta}</p>
+                                <div style={{ color: '#08484A', fontWeight: 600}}>INGREDIENTS</div>
+                                <p style={{ fontSize: '1.25rem' }}>{item.Descriere}</p>
+                                <div style={{ color: '#08484A', fontWeight: 600}}>HOW TO</div>
+                                <p style={{ margin: '1rem', fontSize: '1.25rem' }}>{item.ModPreparare}</p>
+                            </div>
                         </div>
                     )}
                 </div>
@@ -72,23 +72,23 @@ const RecipePage = () => {
                         <div
                             style={{
                                 display: 'flex',
-                                flexDirection: 'column',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 backgroundColor: '#FFFFFF',
                                 borderRadius: '1rem',
                                 padding: '0.5rem',
-                                border: '1px solid #08484A',
+                                border: '2px solid #08484A',
                                 margin: '5rem 6rem',
                             }}
                         >
-                            <img src={item.Imagine} alt="img"/>
-                            <div>RECIPE NAME</div>
-                            <p>{item.NumeReteta}</p>
-                            <div>INGREDIENTS</div>
-                            <p>{item.Descriere}</p>
-                            <div>HOW TO</div>
-                            <p>{item.ModPreparare}</p>
+                            <img src={item.Imagine} alt="img" style={{borderRadius: '1rem'}}/>
+                            <div style={{display: 'flex', flexDirection: 'column'}}>
+                                <p style={{ color: '#08484A', fontWeight: 700, fontSize: '1.5rem', display: 'flex', marginLeft: '1.5rem', marginTop: '-3rem' }}>{item.NumeReteta}</p>
+                                <div style={{ color: '#08484A', fontWeight: 600}}>INGREDIENTS</div>
+                                <p style={{ fontSize: '1.25rem' }}>{item.Descriere}</p>
+                                <div style={{ color: '#08484A', fontWeight: 600}}>HOW TO</div>
+                                <p style={{ margin: '1rem', fontSize: '1.25rem' }}>{item.ModPreparare}</p>
+                            </div>
                         </div>
                     )}
                 </div>
@@ -104,20 +104,17 @@ const RecipePage = () => {
     return (
         <div>
             {MapRecipe()}
-
-            <Button variant="outlined"
+            <Button variant="text"
                     style={{
                         position: 'absolute',
-                        top: '80rem',
-                        left: '43vw',
-                        background: '#FFFFFF',
-                        borderRadius: '1rem',
-                        color: '#08484A',
-                        borderColor: '#08484A',
+                        color: 'black',
+                        fontWeight: 700,
+                        top: '75vh',
+                        left: '80vw',
                     }}
                     onClick={GoBackToHome}
             >
-                Go Home
+                Start Again
             </Button>
         </div>
     );

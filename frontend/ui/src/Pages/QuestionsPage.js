@@ -1,4 +1,4 @@
-import backgroundImg from "./food2.png";
+import backgroundImg from "./food.png";
 import {Button} from "@mui/material";
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -161,8 +161,6 @@ const QuestionsPage = () => {
         getQuestions();
     },[currentNode])
 
-    
-
     function readFromDataBase() {
         console.log("readFromDataBase");
         console.log(currentNode);
@@ -185,7 +183,7 @@ const QuestionsPage = () => {
 
     return (
         <>
-            <img src={backgroundImg} alt="" style={{width: '50%'}}/>
+            <img src={backgroundImg} alt="" style={{ width: '50%', marginTop: '2rem' }}/>
             <div
                 style={{
                     display: 'flex',
@@ -194,9 +192,9 @@ const QuestionsPage = () => {
                     backgroundColor: '#FFFFFF',
                     borderRadius: '1rem',
                     padding: '0.5rem',
-                    top: '4rem',
+                    top: '40vh',
                     left: '43vw',
-                    border: '1px solid #08484A',
+                    border: '2px solid #08484A',
                 }}
             >
                 {readFromDataBase()}
@@ -204,16 +202,17 @@ const QuestionsPage = () => {
             <Button variant="outlined"
                     style={{
                         position: 'absolute',
-                        top: '10rem',
+                        top: '55vh',
                         left: '43vw',
                         background: '#FFFFFF',
                         borderRadius: '1rem',
                         color: '#08484A',
                         borderColor: '#08484A',
+                        fontWeight: 700,
                     }}
                     onClick={goToRecipePage}
             >
-                Next
+                Next Question
             </Button>
         </>
     );
