@@ -193,7 +193,7 @@ const QuestionsPage = () => {
                     borderRadius: '1rem',
                     padding: '0.5rem',
                     top: '40vh',
-                    left: '43vw',
+                    left: '39vw',
                     border: '2px solid #08484A',
                 }}
             >
@@ -203,7 +203,7 @@ const QuestionsPage = () => {
                     style={{
                         position: 'absolute',
                         top: '55vh',
-                        left: '43vw',
+                        left: '39vw',
                         background: '#FFFFFF',
                         borderRadius: '1rem',
                         color: '#08484A',

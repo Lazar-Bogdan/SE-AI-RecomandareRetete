@@ -54,9 +54,9 @@ const RecipePage = () => {
                         >
                             <img src={item.Imagine} alt="img" style={{borderRadius: '1rem'}}/>
                             <div style={{display: 'flex', flexDirection: 'column'}}>
-                                <p style={{ color: '#08484A', fontWeight: 700, fontSize: '1.5rem', display: 'flex', marginLeft: '1.5rem', marginTop: '-3rem' }}>{item.NumeReteta}</p>
+                                <p style={{ color: '#08484A', fontWeight: 700, fontSize: '1.5rem', display: 'flex', marginLeft: '1.5rem'}}>{item.NumeReteta}</p>
                                 <div style={{ color: '#08484A', fontWeight: 600}}>INGREDIENTS</div>
-                                <p style={{ fontSize: '1.25rem' }}>{item.Descriere}</p>
+                                <p style={{ fontSize: '1.25rem', margin: '1rem' }}>{item.Descriere}</p>
                                 <div style={{ color: '#08484A', fontWeight: 600}}>HOW TO</div>
                                 <p style={{ margin: '1rem', fontSize: '1.25rem' }}>{item.ModPreparare}</p>
                             </div>
@@ -83,9 +83,9 @@ const RecipePage = () => {
                         >
                             <img src={item.Imagine} alt="img" style={{borderRadius: '1rem'}}/>
                             <div style={{display: 'flex', flexDirection: 'column'}}>
-                                <p style={{ color: '#08484A', fontWeight: 700, fontSize: '1.5rem', display: 'flex', marginLeft: '1.5rem', marginTop: '-3rem' }}>{item.NumeReteta}</p>
+                                <p style={{ color: '#08484A', fontWeight: 700, fontSize: '1.5rem', display: 'flex', marginLeft: '1.5rem' }}>{item.NumeReteta}</p>
                                 <div style={{ color: '#08484A', fontWeight: 600}}>INGREDIENTS</div>
-                                <p style={{ fontSize: '1.25rem' }}>{item.Descriere}</p>
+                                <p style={{ fontSize: '1.25rem', margin: '1rem' }}>{item.Descriere}</p>
                                 <div style={{ color: '#08484A', fontWeight: 600}}>HOW TO</div>
                                 <p style={{ margin: '1rem', fontSize: '1.25rem' }}>{item.ModPreparare}</p>
                             </div>
@@ -106,11 +106,9 @@ const RecipePage = () => {
             {MapRecipe()}
             <Button variant="text"
                     style={{
-                        position: 'absolute',
                         color: 'black',
                         fontWeight: 700,
-                        top: '75vh',
-                        left: '80vw',
+                        marginLeft: '50rem',
                     }}
                     onClick={GoBackToHome}
             >

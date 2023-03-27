@@ -13,9 +13,6 @@ const QuestionAnswear = () => {
         setValue(event.target.value);
     };
 
-    // avem buton de next
-    // ne duce la pagina urmatoare cu link-ul /lvlNr/NodeNR
-
     function readFromDataBase() {
         return level1.map((item, index) => (
             <div key={index}>
@@ -44,7 +41,7 @@ const QuestionAnswear = () => {
                 borderRadius: '1rem',
                 padding: '0.5rem',
                 top: '40vh',
-                left: '43vw',
+                left: '39vw',
                 border: '2px solid #08484A',
             }}
         >
